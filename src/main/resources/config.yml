@@ -1,0 +1,145 @@
+# HeadHunt configuration
+# Prices are in your Vault economy's currency. The values below are placeholders:
+# tune them against how fast players earn money on your server.
+
+# Percentage taken from every head sale (money sink). 0 disables it.
+sale-tax-percent: 0
+
+# Extra drop chance per Looting level (0.01 = +1% per level).
+looting-bonus-per-level: 0.01
+
+# Tell the killer when a head drops.
+notify-on-drop: true
+
+# Worlds where heads never drop.
+disabled-worlds: []
+
+# Mobs from spawners DO drop heads (nothing is blocked by default).
+# To stop farming, list spawn reasons here, e.g. [SPAWNER, BREEDING, EGG].
+# Reasons: https://jd.papermc.io/paper/1.21.11/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html
+blocked-spawn-reasons: []
+
+# Title of the /headlist menu (MiniMessage format).
+gui:
+  title: "<gold>HeadHunt <dark_gray>| <gray>Mob Heads"
+
+# Participating mobs. Key = Minecraft entity ID in lowercase. This list is also what /headlist shows.
+#   chance:  drop probability, 0.05 = 5%
+#   price:   sale value per head
+#   owner:   (optional) player account whose skin is used for the head. The MHF_* accounts
+#            are the classic mob-head skins. Loaded from Mojang's servers.
+#   texture: (optional) base64 skin "Value" from minecraft-heads.com. Overrides owner.
+# Vanilla head models are used automatically for zombie, skeleton, wither_skeleton,
+# creeper, piglin and ender_dragon.
+mobs:
+  creeper:
+    chance: 0.05
+    price: 25.0
+  spider:
+    chance: 0.05
+    price: 15.0
+    owner: MHF_Spider
+  zombie:
+    chance: 0.05
+    price: 15.0
+  skeleton:
+    chance: 0.05
+    price: 15.0
+  chicken:
+    chance: 0.05
+    price: 6.0
+    owner: MHF_Chicken
+  cow:
+    chance: 0.05
+    price: 8.0
+    owner: MHF_Cow
+  sheep:
+    chance: 0.05
+    price: 8.0
+    owner: MHF_Sheep
+  pig:
+    chance: 0.05
+    price: 8.0
+    owner: MHF_Pig
+
+  # ---- More mobs, ready to switch on ----
+  # To enable one: delete ONLY the "#" at the start of its line (keep the two spaces after it).
+  # Mobs without owner/texture show up as a default-skin head until you add one.
+  # Do not add ender_dragon or wither.
+  # /headlist fits 28 mobs. Tell me when you go past that and I'll add pages.
+  #
+  # Hostile
+#  husk: {chance: 0.05, price: 20.0}
+#  stray: {chance: 0.05, price: 20.0}
+#  drowned: {chance: 0.05, price: 20.0}
+#  bogged: {chance: 0.05, price: 25.0}
+#  cave_spider: {chance: 0.05, price: 15.0, owner: MHF_CaveSpider}
+#  slime: {chance: 0.05, price: 15.0, owner: MHF_Slime}
+#  enderman: {chance: 0.03, price: 50.0, owner: MHF_Enderman}
+#  witch: {chance: 0.05, price: 40.0}
+#  phantom: {chance: 0.05, price: 35.0}
+#  pillager: {chance: 0.05, price: 25.0}
+#  vindicator: {chance: 0.05, price: 30.0}
+#  evoker: {chance: 0.03, price: 60.0}
+#  ravager: {chance: 0.03, price: 60.0}
+#  vex: {chance: 0.05, price: 40.0}
+#  guardian: {chance: 0.05, price: 35.0}
+#  silverfish: {chance: 0.05, price: 10.0}
+#  endermite: {chance: 0.05, price: 20.0}
+#  zombie_villager: {chance: 0.05, price: 25.0}
+#  breeze: {chance: 0.05, price: 40.0}
+#  creaking: {chance: 0.05, price: 40.0}
+#  shulker: {chance: 0.03, price: 60.0}
+  # Nether
+#  blaze: {chance: 0.05, price: 40.0, owner: MHF_Blaze}
+#  ghast: {chance: 0.03, price: 60.0, owner: MHF_Ghast}
+#  magma_cube: {chance: 0.05, price: 25.0, owner: MHF_LavaSlime}
+#  wither_skeleton: {chance: 0.03, price: 75.0}
+#  piglin: {chance: 0.05, price: 30.0}
+#  piglin_brute: {chance: 0.03, price: 50.0}
+#  zombified_piglin: {chance: 0.05, price: 25.0, owner: MHF_PigZombie}
+#  hoglin: {chance: 0.05, price: 30.0}
+#  zoglin: {chance: 0.05, price: 40.0}
+  # Animals and others
+#  rabbit: {chance: 0.05, price: 8.0}
+#  horse: {chance: 0.05, price: 10.0}
+#  donkey: {chance: 0.05, price: 10.0}
+#  mule: {chance: 0.05, price: 10.0}
+#  llama: {chance: 0.05, price: 10.0}
+#  cat: {chance: 0.05, price: 10.0}
+#  wolf: {chance: 0.05, price: 10.0}
+#  fox: {chance: 0.05, price: 10.0}
+#  panda: {chance: 0.05, price: 20.0}
+#  polar_bear: {chance: 0.05, price: 20.0}
+#  turtle: {chance: 0.05, price: 15.0}
+#  bee: {chance: 0.05, price: 10.0}
+#  goat: {chance: 0.05, price: 10.0}
+#  camel: {chance: 0.05, price: 15.0}
+#  armadillo: {chance: 0.05, price: 10.0}
+#  frog: {chance: 0.05, price: 10.0}
+#  axolotl: {chance: 0.05, price: 15.0}
+#  mooshroom: {chance: 0.05, price: 12.0, owner: MHF_MushroomCow}
+#  squid: {chance: 0.05, price: 8.0, owner: MHF_Squid}
+#  glow_squid: {chance: 0.05, price: 12.0}
+#  cod: {chance: 0.05, price: 5.0}
+#  salmon: {chance: 0.05, price: 5.0}
+#  tropical_fish: {chance: 0.05, price: 5.0}
+#  pufferfish: {chance: 0.05, price: 8.0}
+#  dolphin: {chance: 0.05, price: 10.0}
+#  bat: {chance: 0.05, price: 5.0}
+#  parrot: {chance: 0.05, price: 10.0}
+#  iron_golem: {chance: 0.03, price: 40.0, owner: MHF_Golem}
+#  snow_golem: {chance: 0.05, price: 15.0}
+
+messages:
+  prefix: "<dark_gray>[<gold>HeadHunt</gold>]</dark_gray> "
+  no-permission: "<red>You don't have permission to do that."
+  players-only: "<red>Only players can use this command."
+  no-economy: "<red>No economy is available right now. Tell an admin."
+  usage-headhunt: "<red>Usage: /headhunt reload"
+  head-dropped: "<yellow>A <head> dropped!"
+  no-heads: "<red>You have no sellable heads."
+  no-heads-configured: "<red>No mob heads are set up yet."
+  sold: "<green>Sold <count> head(s) for <gold><amount></gold>."
+  sale-failed: "<red>The sale failed. Your heads were returned."
+  reloaded: "<green>Config reloaded."

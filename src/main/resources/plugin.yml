@@ -1,0 +1,30 @@
+name: HeadHunt
+version: ${project.version}
+main: dev.headhunt.HeadHunt
+api-version: '1.21'
+description: Mob head drops that sell for money, with a /headlist price menu
+depend: [Vault]
+softdepend: [EssentialsX]
+
+commands:
+  sellheads:
+    description: Sell the mob heads in your inventory
+    usage: /sellheads [hand]
+    aliases: [sellhead]
+  headlist:
+    description: See which mob heads drop and what they sell for
+    usage: /headlist
+  headhunt:
+    description: HeadHunt admin command
+    usage: /headhunt reload
+
+permissions:
+  headhunt.sell:
+    description: Use /sellheads
+    default: true
+  headhunt.list:
+    description: Use /headlist
+    default: true
+  headhunt.admin:
+    description: Use /headhunt reload
+    default: op
